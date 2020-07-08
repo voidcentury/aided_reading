@@ -1,7 +1,5 @@
 # Chrome Extension: Smart Skim
 
-## Description
-
 If you do a lot of online reading, this is for you.
 
 The aim of this extension is to highlight the important words and phrases in a web article.
@@ -29,4 +27,4 @@ Once a web page is loaded, press "Alt+H" to highlight the words on that page.
 [mechatroner](https://github.com/mechatroner) - Core functionality  
 [XQDD](https://github.com/XQDD) - Text-To-Speech idea and implementation  
 
-[voidcentury](https://github.com/XQDD) - Adaptation to this new purpose
+[voidcentury](https://github.com/voidcentury) - Adaptation to this new purpose
