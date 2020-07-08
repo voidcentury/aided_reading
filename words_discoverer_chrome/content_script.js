@@ -34,7 +34,8 @@ function make_class_name(lemma) {
 function get_rare_lemma(word) {
     if (word.length < 3)
         return undefined;
-    var wf = undefined;
+    // var wf = undefined;
+    var wf = [word, 20000];
     if (dict_words.hasOwnProperty(word)) {
         wf = dict_words[word];
     }
@@ -541,7 +542,18 @@ function initForPage() {
 }
 
 
-document.addEventListener("DOMContentLoaded", function (event) {
-    initForPage();
-});
+// document.addEventListener("DOMContentLoaded", function (event) {
+//     initForPage();
+// });
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        console.log(sender.tab ?
+                  "from a content script:" + sender.tab.url :
+                  "from the extension");
+        if (request.greeting == "unleash"){
+            initForPage();
+            sendResponse({farewell: "unleashed"});
+      }
+    });
 

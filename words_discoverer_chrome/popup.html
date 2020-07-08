@@ -142,7 +142,7 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <fieldset>
+    <fieldset hidden>
     <input type="radio" id="rb_enabled" name="switch_mode" value="rb_enabled">
     <label class="cbLabel" for="rb_enabled">__MSG_enabledDescription__</label><br>
     <input type="radio" id="rb_disabled" name="switch_mode" value="rb_disabled">
@@ -155,7 +155,6 @@
     </div>
     <br>
     </fieldset>
-    <br>
     <fieldset>
     <div class="rateInfo">__MSG_rateInfo1__ <span class="indicator" id="countIndicator">n/a</span> (<span class="indicator" id="rateIndicator1">n/a</span>) __MSG_rateInfo2__</div>
     <button class="rateButton" id="rateM10">-10</button>
@@ -165,7 +164,7 @@
     <button class="rateButton" id="rateP10">+10</button>
     </fieldset>
     <br>
-    <fieldset>
+    <fieldset hidden>
     <div class="rateInfo">__MSG_vocabSizeInfo1__ <span class="indicator" id="vocabIndicator">n/a</span> __MSG_vocabSizeInfo2__</div>
     <button class="vocabButton margin_bottom display_block" id="showVocab">__MSG_showVocab__</button>
     <span class="rateInfo">__MSG_tipInfo__</span>
@@ -174,7 +173,6 @@
     <br>
     <span class="rateInfo" id="addOpResult"></span>
     </fieldset>
-    <br>
     <fieldset>
     <button class="vocabButton" id="adjust">__MSG_adjust__</button>
     <button class="helpButton" id="getHelp">?</button>

@@ -435,16 +435,16 @@ function initialize_extension() {
                     });
                 });
             } else if (request.wdm_verdict == "keyboard") {
-                chrome.browserAction.setIcon({path: "no_dynamic.png", tabId: sender.tab.id});
+                chrome.browserAction.setIcon({path: "icon_48_gray.png", tabId: sender.tab.id});
             } else {
-                chrome.browserAction.setIcon({path: "result48_gray.png", tabId: sender.tab.id});
+                chrome.browserAction.setIcon({path: "icon_48_gray.png", tabId: sender.tab.id});
             }
         } else if (request.wdm_new_tab_url) {
             var fullUrl = request.wdm_new_tab_url;
             chrome.tabs.create({'url': fullUrl}, function (tab) {
             });
         } else if (request.wdm_request == "gd_sync") {
-            start_sync_sequence(request.interactive_mode);
+            // start_sync_sequence(request.interactive_mode);
         }
     });
 
@@ -460,7 +460,7 @@ function initialize_extension() {
                 useBackground: false,
                 backgroundColor: "rgb(255, 248, 220)",
                 useColor: true,
-                color: "red"
+                color: "blue"
             };
             idiom_hl_params = {
                 enabled: true,
@@ -469,7 +469,7 @@ function initialize_extension() {
                 useBackground: false,
                 backgroundColor: "rgb(255, 248, 220)",
                 useColor: true,
-                color: "blue"
+                color: "green"
             };
             wd_hl_settings = {
                 wordParams: word_hl_params,
@@ -516,11 +516,22 @@ function initialize_extension() {
     });
 
 
-    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-        if (request.type = "tts_speak") {
-            if (!!request.word && typeof request.word === "string") {
-                chrome.tts.speak(request.word, {lang: "en", gender: "male"})
-            }
+    // chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    //     if (request.type = "tts_speak") {
+    //         if (!!request.word && typeof request.word === "string") {
+    //             chrome.tts.speak(request.word, {lang: "en", gender: "male"})
+    //         }
+    //     }
+    // });
+
+    chrome.commands.onCommand.addListener(function (command) {
+        if (command === "unleash") {
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                chrome.tabs.sendMessage(tabs[0].id, {greeting: "unleash"}, function(response) {
+                  console.log(response.farewell);
+                });
+              });
+
         }
     });
 }

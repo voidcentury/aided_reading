@@ -1,23 +1,32 @@
-# Computer Aided Reading tool: Words Discoverer.
+# Chrome Extension: Smart Skim
 
 ## Description
 
-Main purpose of this project is to improve reading experience for non-native speakers.
+If you do a lot of online reading, this is for you.
 
-According to some observations reading behavior of native and non-native speakers can differ.
-Also native speakers have a higher probability to spot an unknown word or idiom in text they read.
-To help users spot new words and increase their vocabulary, rare words in text can be highlighted.
-Another way to help users is to highlight idioms, which sometimes can be very hard to recognize and isolate from surrounding text.
+The aim of this extension is to highlight the important words and phrases of a web article.
+
+A word is assumed to be important if: 
+* The frequency with which it usually occurs in the literature is below a threshold (adjustable) 
+* It is not found in the dictionary
 
 
-## Chrome extension
+## Screenshot
 
-* Highlights English words from eng_dict.txt file
-* Highlights English idioms from eng_idioms.txt file
+![screenshot](screenshot.png)
 
-[Words Discoverer in Chrome webstore](https://chrome.google.com/webstore/detail/words-discoverer-expand-y/noncaeikjgpbdeoocblijjgegnobogib)
+
+## Usage
+
+Extension not published in the webstore.
+To use this in your browser, load the "words_discoverer_chrome" folder as an unpacked extension in Chrome/Brave.
+
+Once a web page is loaded, press "Alt+H" to highlight the words on that page.
+
 
 ## Contributors
 
 [mechatroner](https://github.com/mechatroner) - Core functionality  
 [XQDD](https://github.com/XQDD) - Text-To-Speech idea and implementation  
+
+[voidcentury](https://github.com/XQDD) - Adaptation to this new purpose
