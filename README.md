@@ -4,7 +4,7 @@
 
 If you do a lot of online reading, this is for you.
 
-The aim of this extension is to highlight the important words and phrases of a web article.
+The aim of this extension is to highlight the important words and phrases in a web article.
 
 A word is assumed to be important if: 
 * The frequency with which it usually occurs in the literature is below a threshold (adjustable) 
@@ -13,7 +13,7 @@ A word is assumed to be important if:
 
 ## Screenshot
 
-![screenshot](screenshot.png)
+![screenshot](words_discoverer_chrome/screenshot.png)
 
 
 ## Usage
